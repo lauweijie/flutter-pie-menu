@@ -1,3 +1,9 @@
+## 3.4.0
+
+* Wrapped canvas with `PopScope` to dismiss the menu using system back gestures.
+* Fixed `RenderObject.getTransformTo` exception thrown from `PieCanvasCore` during build. [#88](https://github.com/rasitayaz/flutter-pie-menu/issues/88)
+* Bumped minimum SDK version to 3.7.0.
+
 ## 3.3.4
 
 * Added test coverage by [@lauweijie](https://github.com/lauweijie).

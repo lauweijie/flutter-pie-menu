@@ -1,4 +1,4 @@
-library pie_menu;
+library;
 
 export 'src/pie_action.dart';
 export 'src/pie_button_theme.dart';

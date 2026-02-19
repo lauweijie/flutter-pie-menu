@@ -9,10 +9,7 @@ extension ContextExtension on BuildContext {
   void showSnackBar(String message) {
     ScaffoldMessenger.of(this).removeCurrentSnackBar();
     ScaffoldMessenger.of(this).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
-      ),
+      SnackBar(content: Text(message), duration: const Duration(seconds: 2)),
     );
   }
 }
@@ -71,10 +68,7 @@ class _HomePageState extends State<HomePage> {
     return PieCanvas(
       theme: const PieTheme(
         rightClickShowsMenu: true,
-        tooltipTextStyle: TextStyle(
-          fontSize: 32,
-          fontWeight: FontWeight.w600,
-        ),
+        tooltipTextStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
       ),
       child: Scaffold(
         appBar: AppBar(
@@ -85,11 +79,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: IndexedStack(
           index: _navigationIndex,
-          children: const [
-            StylingPage(),
-            ListViewPage(),
-            AboutPage(),
-          ],
+          children: const [StylingPage(), ListViewPage(), AboutPage()],
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _navigationIndex,
@@ -125,10 +115,7 @@ class StylingPage extends StatelessWidget {
     return PieCanvas(
       theme: const PieTheme(
         regularPressShowsMenu: true,
-        tooltipTextStyle: TextStyle(
-          fontSize: 32,
-          fontWeight: FontWeight.w600,
-        ),
+        tooltipTextStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
       ),
       child: Builder(
         builder: (context) {
@@ -210,8 +197,9 @@ class StylingPage extends StatelessWidget {
                               ),
                               PieAction.builder(
                                 tooltip: const Text('this?!'),
-                                onSelect: () =>
-                                    context.showSnackBar('Pretty cool :)'),
+                                onSelect:
+                                    () =>
+                                        context.showSnackBar('Pretty cool :)'),
                                 builder: (hovered) {
                                   return _buildTextButton('4', hovered);
                                 },
@@ -281,18 +269,21 @@ class StylingPage extends StatelessWidget {
 
                                 /// Custom background color
                                 buttonTheme: PieButtonTheme(
-                                  backgroundColor:
-                                      Colors.black.withValues(alpha: 0.7),
+                                  backgroundColor: Colors.black.withValues(
+                                    alpha: 0.7,
+                                  ),
                                   iconColor: Colors.white,
                                 ),
                                 child: const FaIcon(FontAwesomeIcons.palette),
                               ),
                               PieAction(
-                                tooltip:
-                                    const Text('Now with right click support!'),
+                                tooltip: const Text(
+                                  'Now with right click support!',
+                                ),
                                 buttonTheme: PieButtonTheme(
-                                  backgroundColor:
-                                      Colors.black.withValues(alpha: 0.5),
+                                  backgroundColor: Colors.black.withValues(
+                                    alpha: 0.5,
+                                  ),
                                   iconColor: Colors.white,
                                 ),
                                 onSelect: () {
@@ -323,22 +314,13 @@ class StylingPage extends StatelessWidget {
     );
   }
 
-  Widget _buildCard({
-    Color? color,
-    required IconData iconData,
-  }) {
+  Widget _buildCard({Color? color, required IconData iconData}) {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Center(
-        child: FaIcon(
-          iconData,
-          color: Colors.white,
-          size: 64,
-        ),
-      ),
+      child: Center(child: FaIcon(iconData, color: Colors.white, size: 64)),
     );
   }
 
@@ -462,13 +444,7 @@ class AboutPage extends StatelessWidget {
                 children: [
                   FlutterLogo(size: 100),
                   SizedBox(width: 16),
-                  Text(
-                    '🥧',
-                    style: TextStyle(
-                      fontSize: 100,
-                      height: 0.8,
-                    ),
-                  ),
+                  Text('🥧', style: TextStyle(fontSize: 100, height: 0.8)),
                 ],
               ),
               const SizedBox(height: 32),
@@ -520,10 +496,7 @@ class AboutPage extends StatelessWidget {
                         children: [
                           Text(
                             'created by',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 36,
-                            ),
+                            style: TextStyle(color: Colors.white, fontSize: 36),
                           ),
                           Text(
                             'Raşit Ayaz',
